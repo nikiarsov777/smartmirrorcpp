@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Calendar.qml</file>
+        <file>DateUtils.js</file>
+        <file>Style.qml</file>
+        <file>StyleModel.qml</file>
+        <file>Media.qml</file>
+        <file>PositionModel.qml</file>
+        <file>HttpRequests.js</file>
+        <file>LoginPage.qml</file>
+        <file>CButton.qml</file>
+        <file>ConfigMenu.qml</file>
+        <file>PictImage.qml</file>
+    </qresource>
+</RCC>
