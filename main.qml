@@ -10,7 +10,6 @@ import Qt.labs.folderlistmodel 2.2
 import Qt.labs.settings 1.1
 import Media 1.0
 import "qrc:HttpRequests.js" as HttpRequest
-//import MLoginPage 1.0
 import ConfigMenu 1.0
 
 
@@ -22,14 +21,14 @@ ApplicationWindow {
     width: 640
     height: 480
     title: qsTr("Calendar")
-    color: "red"
+    color: "black"
 
     //    property var photoDirectoryFileDialog: "file:/home/niki/Pictures/Пазарджик/"
     property alias photoDirectoryFileDialog: folderModel.folder
     //    property var photoDirectoryFileDialog: ""
     property var i: 0
     property var show: false
-    property var newUrl: "https://www.youtube.com/embed/n3K_iu2acE0?autoplay=1"
+//    property var newUrl: "https://www.youtube.com/embed/n3K_iu2acE0?autoplay=1"
 
 
     Rectangle {
@@ -55,15 +54,21 @@ ApplicationWindow {
 
 //        }
 
-        Media {
-            id: media
-            Settings {
-                property string state: "default"
-                property alias mediaX: media.x
-                property alias mediaY: media.y
-            }
-        }
+//        Media {
+//            id: media
+//            Settings {
+//                property string state: "default"
+//                property alias mediaX: media.x
+//                property alias mediaY: media.y
+//            }
+//        }
 
+
+        Loader {
+            id:media
+            width: 420
+            height: 240
+        }
 
         ListView
         {

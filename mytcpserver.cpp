@@ -32,10 +32,10 @@ MyTcpServer::MyTcpServer(QObject *parent) :
 
     QQmlApplicationEngine engine;
 
-    qmlRegisterSingletonType(QUrl("qrc:/Style.qml"), "Style", 1, 0, "Style");
-    qmlRegisterSingletonType(QUrl("qrc:/ProxyStyles.qml"), "ProxyStyles", 1, 0, "ProxyStyles");
-    qmlRegisterSingletonType(QUrl("qrc:/Calendar.qml"), "Calendar", 1, 0, "Calendar");
-    qmlRegisterType(QUrl("qrc:/Media.qml"), "Media", 1, 0, "Media");
+//    qmlRegisterSingletonType(QUrl("qrc:/Style.qml"), "Style", 1, 0, "Style");
+//    qmlRegisterSingletonType(QUrl("qrc:/ProxyStyles.qml"), "ProxyStyles", 1, 0, "ProxyStyles");
+//    qmlRegisterSingletonType(QUrl("qrc:/Calendar.qml"), "Calendar", 1, 0, "Calendar");
+//    qmlRegisterType(QUrl("qrc:/Media.qml"), "Media", 1, 0, "Media");
 
 
     //    const QUrl url(QStringLiteral("qrc:/main.qml"));

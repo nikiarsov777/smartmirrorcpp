@@ -24,6 +24,11 @@ Rectangle {
         spacing: 16
         Column {
           spacing: 4
+          Label {
+              id: messageText
+              text: ""
+          }
+
           Text{
               color: "white"
               text: "Email"
