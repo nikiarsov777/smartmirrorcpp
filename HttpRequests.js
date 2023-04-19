@@ -93,8 +93,9 @@ function login(theUrl, params, method = "GET", object)
                     object.visible = false
 
                     window.show = true
-                    imageCalendar.source= "http://smirror.test/api/Calendar.qml"
-                    media.source= "http://smirror.test/api/Media.qml"
+                    menu.visible=true
+                    imageCalendar.source= "http://smirror.test/api/load_page?page=calendar"
+                    media.source= "http://smirror.test/api/load_page?page=media"
 //                    media.url = window.newUrl
 //                    loadPage("http://smirror.test/api/load_page","","GET",imageCalendar)
                 } else {

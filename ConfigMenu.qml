@@ -11,9 +11,9 @@ import "qrc:HttpRequests.js" as HttpRequest
 Rectangle {
     id: menuRect
     width: 200
-    height: 450
+    height: 300
     color: "black"
-//    visible: false
+    visible: false
     x: window.screen.width - 20 - menuForm.width
     Button {
         id: menuButton
@@ -143,6 +143,19 @@ Rectangle {
                         mirrorCalendar.radius = value
                     }
                 }
+            }
+            Row {
+              spacing: 4
+              Button {
+                  text: "Close"
+                  width: menuRect.width * 0.9
+                  height: 25
+                  onClicked: {
+                      menuForm.visible = !menuForm.shown
+                      menuForm.shown = !menuForm.shown
+                  }
+              }
+              //test@test.bg
             }
         }
     }

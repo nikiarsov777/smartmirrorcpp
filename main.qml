@@ -46,7 +46,6 @@ ApplicationWindow {
         //Menu
         ConfigMenu {
             id: menu
-
         }
 //        MouseArea {
 //            id: mouseAreaCalendar
