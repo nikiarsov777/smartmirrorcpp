@@ -1,5 +1,7 @@
 import QtQuick 2.0
 
+import "qrc:HttpRequests.js" as HttpRequest
+
 Image {
     id: imgCal
     property bool fullScreen: false
@@ -16,6 +18,14 @@ Image {
     //                                fillMode: Image.PreserveAspectFit
     width: mirrorCalendar.width
     height: 240
+    Timer {
+        id: timer
+        repeat: true
+        running: true
+        interval: 5000
+        onTriggered: changePict()
+    }
+
     MouseArea
     {
         width: parent.width
@@ -67,5 +77,12 @@ Image {
             imgCal.height=imgCal.pictH
             imgCal.fullScreen = false
         }
+    }
+
+    function changePict() {
+        let str = "count=" + i
+
+        HttpRequest.getImage("http://smirror.test/api/images", str, "GET", imageCalendar)
+        i++
     }
 }

@@ -99,16 +99,22 @@ ApplicationWindow {
                 property alias calendarY: mirrorCalendar.y
                 property alias radius: mirrorCalendar.radius
             }
-            Timer {
-                id: timer
-                repeat: true
-                running: true
-                interval: 5000
-                onTriggered: changePict()
-            }
+//            Timer {
+//                id: timer
+//                repeat: true
+//                running: true
+//                interval: 5000
+//                onTriggered: changePict()
+//            }
 
             //PictImage
-            PictImage {
+//            PictImage {
+//                id:imageCalendar
+//                width: 420
+//                height: 240
+//            }
+
+            Loader {
                 id:imageCalendar
                 width: 420
                 height: 240
@@ -134,12 +140,12 @@ ApplicationWindow {
     //    }
 
 
-    function changePict() {
-        let str = "count=" + i
+//    function changePict() {
+//        let str = "count=" + i
 
-        HttpRequest.getImage("http://smirror.test/api/images", str, "GET", imageCalendar)
-        i++
-    }
+//        HttpRequest.getImage("http://smirror.test/api/images", str, "GET", imageCalendar)
+//        i++
+//    }
 
 }
 
