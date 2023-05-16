@@ -28,6 +28,8 @@ ApplicationWindow {
     //    property var photoDirectoryFileDialog: ""
     property var i: 0
     property var show: false
+    property var token: ""
+    property var userId: ""
 //    property var newUrl: "https://www.youtube.com/embed/n3K_iu2acE0?autoplay=1"
 
 

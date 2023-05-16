@@ -50,15 +50,17 @@ function getImage(theUrl, params, method = "GET", object)
     return http.onreadystatechange = function(response) { // Call a function when the state changes.
         if (http.readyState === XMLHttpRequest.DONE) {
             if (http.status === 200) {
-                console.log("sucess: " + theUrl + "/" + method )
+//                console.log("sucess: " + theUrl + "/" + method )
 //                console.log(JSON.stringify(http.responseText))
                 response = JSON.parse(http.responseText)
             } else {
                 //                    console.log("error: " + theUrl + http.status)
                 response = ["error: " + http.status]
             }
+//            console.log(response.count);
             if (response.count === 0) {
-                window.i = count;
+//                console.log("===========");
+                window.i = response.count;
 
             }
             object.source = response.url
@@ -87,17 +89,17 @@ function login(theUrl, params, method = "GET", object)
         if (http.readyState === XMLHttpRequest.DONE) {
             if (http.status === 200) {
                 console.log("sucess: " + theUrl + "/" + method )
-                console.log(JSON.stringify(http.responseText))
+//                console.log(JSON.stringify(http.responseText))
                 response = JSON.parse(http.responseText)
                 if (response.status === 200) {
                     object.visible = false
 
                     window.show = true
+                    window.token = response.token
+                    window.userId = response.user_id
                     menu.visible=true
                     imageCalendar.source= "http://smirror.test/api/load_page?page=calendar"
-                    media.source= "http://smirror.test/api/load_page?page=media"
-//                    media.url = window.newUrl
-//                    loadPage("http://smirror.test/api/load_page","","GET",imageCalendar)
+                    media.source= "http://smirror.test/api/load_page?page=media&user_id=" + response.user_id
                 } else {
                     object.visible = true
                     messageText.text = response.message
