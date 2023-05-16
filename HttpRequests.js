@@ -39,7 +39,7 @@ function getImage(theUrl, params, method = "GET", object)
 
 
     http.open(method, theUrl, true); // true for asynchronous
-    //    http.setRequestHeader( "Authorization", 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5YjBkOGVlMGQzODdiNjdhYTY0ZjAzZDllODM5MmViMyIsInN1YiI6IjU2MjlmNDBlYzNhMzY4MWI1ZTAwMTkxMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.UxgW0dUhS62m41KjqEf35RWfpw4ghCbnSmSq4bsB32o');
+    http.setRequestHeader( "Authorization", 'Bearer ' + window.token);
 
     http.setRequestHeader("Content-type", "application/json");
     http.setRequestHeader("Accept", "application/json");
@@ -98,8 +98,8 @@ function login(theUrl, params, method = "GET", object)
                     window.token = response.token
                     window.userId = response.user_id
                     menu.visible=true
-                    imageCalendar.source= "http://smirror.test/api/load_page?page=calendar"
-                    media.source= "http://smirror.test/api/load_page?page=media&user_id=" + response.user_id
+                    imageCalendar.source= "http://smirror.test/api/load_page?page=calendar&user_id=" + response.user_id + "&token=" + response.token
+                    media.source= "http://smirror.test/api/load_page?page=media&user_id=" + response.user_id + "&token=" + response.token
                 } else {
                     object.visible = true
                     messageText.text = response.message
