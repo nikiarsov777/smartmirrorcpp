@@ -30,6 +30,8 @@ ApplicationWindow {
     property var show: false
     property var token: ""
     property var userId: ""
+    property var mediaUrl: ""
+    property alias loaderMedia: media.sourceComponent
 //    property var newUrl: "https://www.youtube.com/embed/n3K_iu2acE0?autoplay=1"
 
 
@@ -66,6 +68,7 @@ ApplicationWindow {
 
 
         Loader {
+
             id:media
             width: 420
             height: 240
@@ -152,6 +155,8 @@ ApplicationWindow {
 //        HttpRequest.getImage("http://smirror.test/api/images", str, "GET", imageCalendar)
 //        i++
 //    }
+
+
 
 }
 

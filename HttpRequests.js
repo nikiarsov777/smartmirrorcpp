@@ -19,11 +19,8 @@ function getOption(theUrl, params, method = "GET", object)
     return http.onreadystatechange = function(response) { // Call a function when the state changes.
         if (http.readyState === XMLHttpRequest.DONE) {
             if (http.status === 200) {
-                console.log("sucess: " + theUrl + "/" + method )
-                //                    console.log(JSON.stringify(http.responseText))
                 response = JSON.parse(http.responseText)
             } else {
-                //                    console.log("error: " + theUrl + http.status)
                 response = ["error: " + http.status]
             }
             object.model = response
@@ -50,16 +47,11 @@ function getImage(theUrl, params, method = "GET", object)
     return http.onreadystatechange = function(response) { // Call a function when the state changes.
         if (http.readyState === XMLHttpRequest.DONE) {
             if (http.status === 200) {
-//                console.log("sucess: " + theUrl + "/" + method )
-//                console.log(JSON.stringify(http.responseText))
                 response = JSON.parse(http.responseText)
             } else {
-                //                    console.log("error: " + theUrl + http.status)
                 response = ["error: " + http.status]
             }
-//            console.log(response.count);
             if (response.count === 0) {
-//                console.log("===========");
                 window.i = response.count;
 
             }
@@ -88,8 +80,6 @@ function login(theUrl, params, method = "GET", object)
     return http.onreadystatechange = function(response) { // Call a function when the state changes.
         if (http.readyState === XMLHttpRequest.DONE) {
             if (http.status === 200) {
-                console.log("sucess: " + theUrl + "/" + method )
-//                console.log(JSON.stringify(http.responseText))
                 response = JSON.parse(http.responseText)
                 if (response.status === 200) {
                     object.visible = false
@@ -106,7 +96,6 @@ function login(theUrl, params, method = "GET", object)
                     messageText.color = "red"
                 }
             } else {
-                console.log("error: " + theUrl + http.status)
                 response = ["error: " + http.status]
             }
         }
