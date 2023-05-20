@@ -28,7 +28,7 @@ Calendar {
     property var selectedDateTextColor: "white"
     property var selectedDateBgColor: "black"
     property var defaultDateBgColor: "green"
-    property var radius: 45
+    property int radius: 45
 
     style: CalendarStyle {
         id: calendarStyle

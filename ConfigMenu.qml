@@ -15,6 +15,8 @@ Rectangle {
     color: "black"
     visible: false
     x: window.screen.width - 20 - menuForm.width
+
+    property var isMenuGot: false
     Button {
         id: menuButton
         width: 20
@@ -82,6 +84,7 @@ Rectangle {
                         mCalendar.selectedDateTextColor = themItem.selectedDateTextColor
                         mCalendar.selectedDateBgColor = themItem.selectedDateBgColor
                         mCalendar.defaultDateBgColor = themItem.defaultDateBgColor
+                        mirrorCalendar.radius = themItem.text
                     }
                 }
             }
@@ -103,18 +106,19 @@ Rectangle {
                     onCurrentIndexChanged: {
                         mirrorCalendar.x = comboPosition.model[comboPosition.currentIndex].calendarX
                         mirrorCalendar.y = comboPosition.model[comboPosition.currentIndex].calendarY
-                        media.x = comboPosition.model[comboPosition.currentIndex].mediaX
-                        media.y = comboPosition.model[comboPosition.currentIndex].mediaY
+                        rectMedia.x = comboPosition.model[comboPosition.currentIndex].mediaX
+                        rectMedia.y = comboPosition.model[comboPosition.currentIndex].mediaY
                     }
                 }
 
                 Component.onCompleted: {
-                    let str= "width=" + window.screen.width + "&height=" + window.screen.height
-                    let calendarProperties = "&calendarW=" + mirrorCalendar.width + "&calendarH=" + mirrorCalendar.height
-                    let mediaProperties = "&mediaW=" + media.width + "&mediaH=" + media.height
+//                    let str= "width=" + window.screen.width + "&height=" + window.screen.height
+//                    let calendarProperties = "&calendarW=" + mirrorCalendar.width + "&calendarH=" + mirrorCalendar.height + "&calendarX=" + mirrorCalendar.x + "&calendarY=" + mirrorCalendar.y
+//                    let mediaProperties = "&mediaW=" + media.width + "&mediaH=" + media.height
 
-                    str += calendarProperties + mediaProperties
-                    HttpRequest.getOption("http://smirror.test/api/settings", str, "GET", comboPosition)
+//                    str += calendarProperties + mediaProperties
+//                    str +=  '&type=style'
+//                    HttpRequest.getOption("http://smirror.test/api/clients/settings", str, "GET", comboPosition)
                 }
             }
 
@@ -157,6 +161,26 @@ Rectangle {
               }
               //test@test.bg
             }
+        }
+    }
+    Timer {
+        id: timerMenu
+        repeat: true
+        running: true
+        interval: 5000
+        onTriggered: setConfigMenu()
+    }
+    function setConfigMenu() {
+        let str= "width=" + window.screen.width + "&height=" + window.screen.height
+        let calendarProperties = "&calendarW=" + mirrorCalendar.width + "&calendarH=" + mirrorCalendar.height + "&calendarX=" + mirrorCalendar.x + "&calendarY=" + mirrorCalendar.y
+        let mediaProperties = "&mediaW=" + rectMedia.width + "&mediaH=" + rectMedia.height
+
+        str += calendarProperties + mediaProperties
+        str +=  '&type=style'
+        if (window.token !== "" && !isMenuGot) {
+
+            HttpRequest.getOption("http://smirror.test/api/clients/settings", str, "GET", comboPosition)
+            isMenuGot = true
         }
     }
 }

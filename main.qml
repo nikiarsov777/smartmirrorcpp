@@ -32,14 +32,17 @@ ApplicationWindow {
     property var userId: ""
     property var mediaUrl: ""
     property alias loaderMedia: media.sourceComponent
+    property int mediaX: 0
+    property int mediaY: 0
 //    property var newUrl: "https://www.youtube.com/embed/n3K_iu2acE0?autoplay=1"
 
 
     Rectangle {
         id: mainLayout
         anchors.fill: parent
+        anchors.leftMargin: 0
+        anchors.bottomMargin: 0
         color: "black"
-
         LoginPage {
             id:login
             width: 400
@@ -58,7 +61,7 @@ ApplicationWindow {
 //        }
 
 //        Media {
-//            id: media
+//            id: mediaB
 //            Settings {
 //                property string state: "default"
 //                property alias mediaX: media.x
@@ -67,12 +70,22 @@ ApplicationWindow {
 //        }
 
 
-        Loader {
-
-            id:media
+        Rectangle{
             width: 420
             height: 240
+            id:rectMedia
+            visible: window.show
+            Loader {
+                id:media
+                anchors.fill: parent
+            }
+            Settings {
+                property alias mediaX: rectMedia.x
+                property alias mediaY: rectMedia.y
+            }
         }
+
+
 
         ListView
         {
@@ -98,6 +111,7 @@ ApplicationWindow {
 
         Column{
             property var radius: 0
+            property var style: 'da'
             id:mirrorCalendar
             width: 420
             visible: window.show
@@ -107,6 +121,7 @@ ApplicationWindow {
                 property alias calendarX: mirrorCalendar.x
                 property alias calendarY: mirrorCalendar.y
                 property alias radius: mirrorCalendar.radius
+                property alias style: mirrorCalendar.style
             }
 //            Timer {
 //                id: timer

@@ -19,7 +19,7 @@ Rectangle {
     z:10
     color: "silver"
 
-    visible: window.show
+    visible: false
 
     Rectangle {
         //            anchors.fill: parent
