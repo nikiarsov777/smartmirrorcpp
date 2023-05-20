@@ -111,7 +111,6 @@ ApplicationWindow {
 
         Column{
             property var radius: 0
-            property var style: 'da'
             id:mirrorCalendar
             width: 420
             visible: window.show
@@ -121,7 +120,6 @@ ApplicationWindow {
                 property alias calendarX: mirrorCalendar.x
                 property alias calendarY: mirrorCalendar.y
                 property alias radius: mirrorCalendar.radius
-                property alias style: mirrorCalendar.style
             }
 //            Timer {
 //                id: timer

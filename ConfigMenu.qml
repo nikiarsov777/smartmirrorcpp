@@ -106,6 +106,7 @@ Rectangle {
                     onCurrentIndexChanged: {
                         mirrorCalendar.x = comboPosition.model[comboPosition.currentIndex].calendarX
                         mirrorCalendar.y = comboPosition.model[comboPosition.currentIndex].calendarY
+                        roundSlider.value = comboPosition.model[comboPosition.currentIndex].radius
                         rectMedia.x = comboPosition.model[comboPosition.currentIndex].mediaX
                         rectMedia.y = comboPosition.model[comboPosition.currentIndex].mediaY
                     }
