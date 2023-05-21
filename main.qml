@@ -71,8 +71,8 @@ ApplicationWindow {
 
 
         Rectangle{
-            width: 420
-            height: 240
+            width: 800
+            height: 600
             id:rectMedia
             visible: window.show
             Loader {
