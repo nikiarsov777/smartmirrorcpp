@@ -45,6 +45,10 @@ int main(int argc, char *argv[])
     qmlRegisterType(QUrl("qrc:/CButton.qml"), "CButton", 1, 0, "CButton");
 //    qmlRegisterType(QUrl("qrc:/LoginPage.qml"), "MLoginPage", 1, 0, "MLoginPage");
     qmlRegisterType(QUrl("qrc:/ConfigMenu.qml"), "ConfigMenu", 1, 0, "ConfigMenu");
+//    qmlRegisterType(QUrl("qrc:/utils"), "Utils", 1, 0, "Utils");
+//    qmlRegisterType(QUrl("qrc:/components"), "Components", 1, 0, "Components");
+
+//    qmlRegisterModule("utils",  1, 0);
 
 
     const QUrl url(QStringLiteral("qrc:/main.qml"));

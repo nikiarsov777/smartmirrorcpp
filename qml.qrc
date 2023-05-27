@@ -12,5 +12,7 @@
         <file>CButton.qml</file>
         <file>ConfigMenu.qml</file>
         <file>PictImage.qml</file>
+        <file>Clock.qml</file>
+        <file>SecondsProgress.qml</file>
     </qresource>
 </RCC>

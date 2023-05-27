@@ -13,6 +13,7 @@ import "qrc:HttpRequests.js" as HttpRequest
 import ConfigMenu 1.0
 
 
+
 ApplicationWindow {
     id: window
 //    objectName: window
@@ -86,6 +87,19 @@ ApplicationWindow {
         }
 
 
+        Rectangle {
+            id: rectClock
+            visible: window.show
+            Clock {
+                id:clockItem
+                width: 200
+                height: 230
+            }
+            Settings {
+                property alias mediaX: rectClock.x
+                property alias mediaY: rectClock.y
+            }
+        }
 
         ListView
         {
@@ -135,6 +149,7 @@ ApplicationWindow {
 //                width: 420
 //                height: 240
 //            }
+
 
             Loader {
                 id:imageCalendar
