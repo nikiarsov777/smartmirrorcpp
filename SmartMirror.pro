@@ -1,4 +1,4 @@
-QT += quick qml network gui widgets
+QT += quick qml network gui widgets positioning
 #quickcontrols2
 
 CONFIG += c++11
@@ -15,6 +15,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+        appmodel.cpp \
         main.cpp \
         mytcpserver.cpp
 
@@ -34,7 +35,17 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += \
     assets/left.png \
-    assets/right.png
+    assets/right.png \
+    components/BigForecastIcon.qml \
+    components/ForecastIcon.qml \
+    components/WeatherIcon.qml \
+    fonts/yantramanav/Yantramanav-Bold.ttf \
+    fonts/yantramanav/www.dafontfree.net.url \
+    icons/weather-clear.png \
+    icons/weather-few-clouds.png \
+    icons/weather-sunny-very-few-clouds.png \
+    icons/weather-uknown.png
 
 HEADERS += \
+    appmodel.h \
     mytcpserver.h

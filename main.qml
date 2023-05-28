@@ -12,6 +12,8 @@ import Media 1.0
 import "qrc:HttpRequests.js" as HttpRequest
 import ConfigMenu 1.0
 
+//import WeatherInfo 1.0
+//import "WeatherInfo.qml"
 
 
 ApplicationWindow {
@@ -38,6 +40,8 @@ ApplicationWindow {
 //    property var newUrl: "https://www.youtube.com/embed/n3K_iu2acE0?autoplay=1"
 
 
+
+
     Rectangle {
         id: mainLayout
         anchors.fill: parent
@@ -55,6 +59,8 @@ ApplicationWindow {
         ConfigMenu {
             id: menu
         }
+
+
 //        MouseArea {
 //            id: mouseAreaCalendar
 //            anchors.fill: mirrorCalendar
@@ -87,13 +93,20 @@ ApplicationWindow {
         }
 
 
-        Rectangle {
+        Column {
             id: rectClock
             visible: window.show
+
             Clock {
                 id:clockItem
                 width: 200
                 height: 230
+            }
+            WeatherInfo {
+                id: rectWeather
+                width: 240
+                height: 240
+
             }
             Settings {
                 property alias mediaX: rectClock.x

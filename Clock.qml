@@ -41,7 +41,7 @@ Item {
     FontLoader {
         id: yantramanavBold
         name: "YantramanavBold"
-        source: "fonts/Yantramanav/Yantramanav-Bold.ttf"
+        source: "fonts/yantramanav/Yantramanav-Bold.ttf"
     }
 
     Rectangle {
@@ -117,10 +117,10 @@ Item {
         }
     }
     MouseArea{
-    //            anchors.fill: parent
-    width: parent.width
-    height: 80
-    propagateComposedEvents: true
-    drag.target: rectClock
+        anchors.fill: parent
+        width: parent.width
+        height: 80
+        propagateComposedEvents: true
+        drag.target: rectClock
     }
 }

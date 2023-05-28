@@ -3,7 +3,7 @@
 #include <QQuickView>
 #include <QQuickItem>
 //#include "mytcpserver.h"
-
+#include "appmodel.h"
 
 //class MessageBoard : public QObject
 //{
@@ -26,10 +26,10 @@
 int main(int argc, char *argv[])
 {
 
-//    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    //    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QGuiApplication app(argc, argv);
-//    MyTcpServer server;
+    //    MyTcpServer server;
 
     QQmlApplicationEngine engine;
 
@@ -41,15 +41,19 @@ int main(int argc, char *argv[])
     qmlRegisterSingletonType(QUrl("qrc:/PositionModel.qml"), "PositionModel", 1, 0, "PositionModel");
     qmlRegisterSingletonType(QUrl("qrc:/Calendar.qml"), "Calendar", 1, 0, "Calendar");
     qmlRegisterType(QUrl("qrc:/Media.qml"), "Media", 1, 0, "Media");
-//    qmlRegisterType(QUrl("qrc:/PictImage.qml"), "PictImage", 1, 0, "PictImage");
+    //    qmlRegisterType(QUrl("qrc:/PictImage.qml"), "PictImage", 1, 0, "PictImage");
     qmlRegisterType(QUrl("qrc:/CButton.qml"), "CButton", 1, 0, "CButton");
-//    qmlRegisterType(QUrl("qrc:/LoginPage.qml"), "MLoginPage", 1, 0, "MLoginPage");
+    //    qmlRegisterType(QUrl("qrc:/LoginPage.qml"), "MLoginPage", 1, 0, "MLoginPage");
     qmlRegisterType(QUrl("qrc:/ConfigMenu.qml"), "ConfigMenu", 1, 0, "ConfigMenu");
-//    qmlRegisterType(QUrl("qrc:/utils"), "Utils", 1, 0, "Utils");
-//    qmlRegisterType(QUrl("qrc:/components"), "Components", 1, 0, "Components");
+    //    qmlRegisterType(QUrl("qrc:/utils"), "Utils", 1, 0, "Utils");
+    //    qmlRegisterType(QUrl("qrc:/components"), "Components", 1, 0, "Components");
 
-//    qmlRegisterModule("utils",  1, 0);
+    //    qmlRegisterModule("utils",  1, 0);
 
+    qmlRegisterType<WeatherData>("WeatherInfo", 1, 0, "WeatherData");
+    qmlRegisterType<AppModel>("WeatherInfo", 1, 0, "AppModel");
+
+    qRegisterMetaType<WeatherData>();
 
     const QUrl url(QStringLiteral("qrc:/main.qml"));
 
@@ -61,17 +65,17 @@ int main(int argc, char *argv[])
 
 
     //        MessageBoard messageBoard;
-//    engine.setProperty("photoDirectoryFileDialog", QUrl("file:/home/niki/Pictures/Пазарджик/"));
+    //    engine.setProperty("photoDirectoryFileDialog", QUrl("file:/home/niki/Pictures/Пазарджик/"));
 
     QQmlComponent component(&engine, url);
     QObject *object = component.create();
-//    engine.load(url);
+    //    engine.load(url);
 
     QObject *window = object->findChild<QObject*>("folderModel");
     if (window)
         window->setProperty("folder", "file:/home/niki/Pictures/Пазарджик/");
-//    else
-//        qDebug("===========");
+    //    else
+    //        qDebug("===========");
 
 
 
