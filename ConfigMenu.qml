@@ -119,7 +119,7 @@ Rectangle {
 
 //                    str += calendarProperties + mediaProperties
 //                    str +=  '&type=style'
-//                    HttpRequest.getOption("http://smirror.test/api/clients/settings", str, "GET", comboPosition)
+//                    HttpRequest.getOption("http://www.mirror.tceptt.com/api/clients/settings", str, "GET", comboPosition)
                 }
             }
 
@@ -180,7 +180,7 @@ Rectangle {
         str +=  '&type=style'
         if (window.token !== "" && !isMenuGot) {
 
-            HttpRequest.getOption("http://smirror.test/api/clients/settings", str, "GET", comboPosition)
+            HttpRequest.getOption("http://www.mirror.tceptt.com/api/clients/settings", str, "GET", comboPosition)
             isMenuGot = true
         }
     }

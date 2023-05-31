@@ -13,7 +13,7 @@ Image {
     z:1
 
 //                source: photoDirectoryFileDialog + "/batak1.jpg"
-    source: "http://smirror.test/images/default/0_shili_kamik.jpg"
+    source: "http://www.mirror.tceptt.com/images/default/0_shili_kamik.jpg"
     smooth:  true
     //                                fillMode: Image.PreserveAspectFit
     width: mirrorCalendar.width
@@ -82,7 +82,7 @@ Image {
     function changePict() {
         let str = "count=" + i
 
-        HttpRequest.getImage("http://smirror.test/api/images", str, "GET", imageCalendar)
+        HttpRequest.getImage("http://www.mirror.tceptt.com/api/images", str, "GET", imageCalendar)
         i++
     }
 }

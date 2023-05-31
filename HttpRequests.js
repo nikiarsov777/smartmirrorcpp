@@ -88,8 +88,8 @@ function login(theUrl, params, method = "GET", object)
                     window.token = response.token
                     window.userId = response.user_id
                     menu.visible=true
-                    imageCalendar.source= "http://smirror.test/api/load_page?page=calendar&user_id=" + response.user_id + "&token=" + response.token
-                    media.source= "http://smirror.test/api/load_page?page=media&user_id=" + response.user_id + "&token=" + response.token
+                    imageCalendar.source= "http://www.mirror.tceptt.com/api/load_page?page=calendar&user_id=" + response.user_id + "&token=" + response.token
+                    media.source= "http://www.mirror.tceptt.com/api/load_page?page=media&user_id=" + response.user_id + "&token=" + response.token
 
                     //After Login set Menu
                     let str= "width=" + window.screen.width + "&height=" + window.screen.height
@@ -98,7 +98,7 @@ function login(theUrl, params, method = "GET", object)
 
                     str += calendarProperties + mediaProperties
                     str +=  '&type=style'
-                    getOption("http://smirror.test/api/clients/settings", str, "GET", object)
+                    getOption("http://www.mirror.tceptt.com/api/clients/settings", str, "GET", object)
                 } else {
                     object.visible = true
                     messageText.text = response.message

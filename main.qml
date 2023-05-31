@@ -78,8 +78,8 @@ ApplicationWindow {
 
 
         Rectangle{
-            width: 800
-            height: 600
+            width: 600
+            height: 400
             id:rectMedia
             visible: window.show
             Loader {
@@ -193,7 +193,7 @@ ApplicationWindow {
 //    function changePict() {
 //        let str = "count=" + i
 
-//        HttpRequest.getImage("http://smirror.test/api/images", str, "GET", imageCalendar)
+//        HttpRequest.getImage("http://www.mirror.tceptt.com/api/images", str, "GET", imageCalendar)
 //        i++
 //    }
 

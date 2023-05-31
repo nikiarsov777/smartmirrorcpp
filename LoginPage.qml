@@ -66,7 +66,7 @@ Rectangle {
               height: password.height
               onClicked: {
                   var str = "email=" + email.text + "&password=" + password.text
-                  HttpRequest.login("http://smirror.test/api/login", str, "POST", loginPage)
+                  HttpRequest.login("http://www.mirror.tceptt.com/api/login", str, "POST", loginPage)
                   //                        window.show=true
               }
           }
